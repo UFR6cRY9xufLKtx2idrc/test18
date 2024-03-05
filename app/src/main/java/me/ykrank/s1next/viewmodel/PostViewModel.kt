@@ -180,12 +180,11 @@ class PostViewModel(private val rxBus: RxBus, private val user: User) {
     fun onAppPostClick(v: View) {
         val p = post.get()
         val t = thread.get()
-        val pid = post.get()?.id?.toString()
-        if (pid != null && p != null && t?.id != null) {
-            val p2: Double = pid.toDouble()
-            val p3: Double = p2 / 30
-            val p4 = Math.ceil(p3)
-            val p5: Int = p4.toInt()
+        val p2: Double = p.toDouble()
+        val p3: Double = p2 / 30
+        val p4 = Math.ceil(p3)
+        val p5: Int = p4.toInt()
+        if (p != null && t?.id != null) {
             AppPostListActivity.start(v.context, t.id!!, p5, p.id.toString())
         }
     }
