@@ -180,7 +180,7 @@ class PostViewModel(private val rxBus: RxBus, private val user: User) {
     fun onAppPostClick(v: View) {
         val p = post.get()
         val t = thread.get()
-        val p2 = post.get()?.Page
+        val p2 = post.get()?.id?.toDouble()
         if (p2 != null && p != null && t?.id != null) {
             val p3: Double = p2.toDouble()
             val p4: Double = p3 / 30
