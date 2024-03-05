@@ -181,7 +181,7 @@ class PostViewModel(private val rxBus: RxBus, private val user: User) {
         val p = post.get()
         val t = thread.get()
         val pid = post.get()?.id?.toString()
-        var p2 = pid/30
+        var p2 = pid / 30
         var p3 = Math.ceil(p2)
         val p4: Int = p3.toInt()
         if (p != null && t?.id != null) {
