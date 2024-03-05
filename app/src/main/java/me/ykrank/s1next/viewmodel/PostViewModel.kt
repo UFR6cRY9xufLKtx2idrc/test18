@@ -181,11 +181,11 @@ class PostViewModel(private val rxBus: RxBus, private val user: User) {
         val p = post.get()
         val t = thread.get()
         val p2 = p.getPage()
-        val p3: Double = p2.toDouble()
-        val p4: Double = p3 / 30
-        val p5 = Math.ceil(p4)
-        val p6: Int = p5.toInt()
-        if (p != null && t?.id != null) {
+        if (p2 != null && p != null && t?.id != null) {
+            val p3: Double = p2.toDouble()
+            val p4: Double = p3 / 30
+            val p5 = Math.ceil(p4)
+            val p6: Int = p5.toInt()
             AppPostListActivity.start(v.context, t.id!!, p6, p.id.toString())
         }
     }
